@@ -63,7 +63,7 @@ $ xcrun \
 
 ## Screenshot
 
-![Running via Xcode](http://puu.sh/o1rFn/8a73f35568.png)
+![Running via Xcode](http://puu.sh/o1GIp/201eaa29f0.png)
 
 ## Attribution
 
