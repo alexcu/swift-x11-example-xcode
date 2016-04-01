@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA9B10671CADFD2A0086E101 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B10661CADFD2A0086E101 /* main.swift */; };
+		FA9B10701CADFD540086E101 /* libX11.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9B106F1CADFD540086E101 /* libX11.6.dylib */; };
+		FAF2C5E31CADFF9F00FF0E28 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2C5E21CADFF9F00FF0E28 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,8 @@
 
 /* Begin PBXFileReference section */
 		FA9B10631CADFD2A0086E101 /* swift-x11-xcode-example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "swift-x11-xcode-example"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA9B10661CADFD2A0086E101 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FA9B106F1CADFD540086E101 /* libX11.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libX11.6.dylib; path = ../../../../opt/X11/lib/libX11.6.dylib; sourceTree = "<group>"; };
+		FAF2C5E21CADFF9F00FF0E28 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9B10701CADFD540086E101 /* libX11.6.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +44,7 @@
 		FA9B105A1CADFD2A0086E101 = {
 			isa = PBXGroup;
 			children = (
+				FA9B106F1CADFD540086E101 /* libX11.6.dylib */,
 				FA9B10651CADFD2A0086E101 /* swift-x11-xcode-example */,
 				FA9B10641CADFD2A0086E101 /* Products */,
 			);
@@ -57,7 +61,7 @@
 		FA9B10651CADFD2A0086E101 /* swift-x11-xcode-example */ = {
 			isa = PBXGroup;
 			children = (
-				FA9B10661CADFD2A0086E101 /* main.swift */,
+				FAF2C5E21CADFF9F00FF0E28 /* main.swift */,
 			);
 			path = "swift-x11-xcode-example";
 			sourceTree = "<group>";
@@ -119,7 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9B10671CADFD2A0086E101 /* main.swift in Sources */,
+				FAF2C5E31CADFF9F00FF0E28 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,14 +215,29 @@
 		FA9B106B1CADFD2A0086E101 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/X11/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CX11 /usr/local/include/X11";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		FA9B106C1CADFD2A0086E101 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/X11/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CX11 /usr/local/include/X11";
 			};
 			name = Release;
 		};
@@ -241,6 +260,7 @@
 				FA9B106C1CADFD2A0086E101 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
