@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA9B10701CADFD540086E101 /* libX11.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9B106F1CADFD540086E101 /* libX11.6.dylib */; };
 		FAF2C5E31CADFF9F00FF0E28 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2C5E21CADFF9F00FF0E28 /* main.swift */; };
+		FAF2C5E41CAE040C00FF0E28 /* libX11.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9B106F1CADFD540086E101 /* libX11.6.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9B10701CADFD540086E101 /* libX11.6.dylib in Frameworks */,
+				FAF2C5E41CAE040C00FF0E28 /* libX11.6.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
