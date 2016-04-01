@@ -2,7 +2,7 @@
 
 An example Xcode project showing how to write an X11 app on OS X
 
-## Getting started
+## Prerequisites
 
 Install Quartz using [Homebrew Cask](https://github.com/caskroom/homebrew-cask) or directly from [Sourceforge](http://www.xquartz.org)
 
@@ -19,12 +19,16 @@ $ echo $DISPLAY
 
 If this is empty, your XQuartz installation may have failed.
 
+## Getting Started
+
 Link the header files into `/usr/local/include/X11` and libraries into `/usr/local/lib/X11`:
 
 ```
 $ ln -s /usr/X11/include/X11 /usr/local/include
 $ ln -s /usr/X11/lib /usr/local/lib/X11
 ```
+
+## Building using Xcode
 
 In the Xcode project, under build settings, import the following paths to the search path:
 
@@ -40,6 +44,22 @@ Also under build settings, import the following library search path `/usr/local/
 Under build phases, link the binary with `libX11.6.dylib`. Under the "Choose frameworks and libraries to add" drop sheet, select "Add Other" and locate `/usr/local/lib/X11/libX11.6.dylib`.
 
 ![Import libx11](http://puu.sh/o1r9v/445a91739d.png)
+
+## Building using `xcrun` and `swiftc`
+
+Navigate to `main.swift`
+
+Run:
+
+```$bash
+$ cd /path/to/main.swift
+$ xcrun \
+    -sdk macosx \                # Include OS X SDK    
+    swiftc main.swift \          # Compile main.swift
+    -lX11 -L/usr/local/lib/X11 \ # Include X11 dylib
+    -I/usr/local/include/X11 \   # Include X11 headers
+    -I$(pwd)/../CX11             # Include CX11 module
+```
 
 ## Screenshot
 
