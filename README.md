@@ -19,20 +19,25 @@ $ echo $DISPLAY
 
 If this is empty, your XQuartz installation may have failed.
 
-Link the header files into `/usr/local/include`:
+Link the header files into `/usr/local/include/X11` and libraries into `/usr/local/lib/X11`:
 
 ```
 $ ln -s /usr/X11/include/X11 /usr/local/include
+$ ln -s /usr/X11/lib /usr/local/lib/X11
 ```
 
-In the Xcode project, under build settings, import the following paths:
+In the Xcode project, under build settings, import the following paths to the search path:
 
 1. `$(SRCROOT)/CX11` for the CX11 module
 2. `/usr/local/include/X11` for the X11 headers
 
 ![Import paths](http://puu.sh/o1r7Z/6983640e2d.png)
 
-Under build phases, link the binary with `libX11.6.dylib`. Under the "Choose frameworks and libraries to add" drop sheet, select "Add Other" and locate `/usr/X11/lib/libX11.6.dylib`.
+Also under build settings, import the following library search path `/usr/local/lib/X11`:
+
+![Import library search path](http://puu.sh/o1t8k/5903ca00ac.png)
+
+Under build phases, link the binary with `libX11.6.dylib`. Under the "Choose frameworks and libraries to add" drop sheet, select "Add Other" and locate `/usr/local/lib/X11/libX11.6.dylib`.
 
 ![Import libx11](http://puu.sh/o1r9v/445a91739d.png)
 
