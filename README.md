@@ -35,15 +35,15 @@ In the Xcode project, under build settings, import the following paths to the se
 1. `$(SRCROOT)/CX11` for the CX11 module
 2. `/usr/local/include/X11` for the X11 headers
 
-![Import paths](http://puu.sh/o1r7Z/6983640e2d.png)
+![Import paths](http://i.imgur.com/X173Hj2.png)
 
 Also under build settings, import the following library search path `/usr/local/lib/X11`:
 
-![Import library search path](http://puu.sh/o1t8k/5903ca00ac.png)
+![Import library search path](http://i.imgur.com/IQG4PsU.png)
 
 Under build phases, link the binary with `libX11.6.dylib`. Under the "Choose frameworks and libraries to add" drop sheet, select "Add Other" and locate `/usr/local/lib/X11/libX11.6.dylib`.
 
-![Import libx11](http://puu.sh/o1r9v/445a91739d.png)
+![Import libx11](http://i.imgur.com/IlIT2TH.png)
 
 ## Building using `xcrun` and `swiftc`
 
@@ -63,7 +63,7 @@ $ xcrun \
 
 ## Screenshot
 
-![Running via Xcode](http://puu.sh/o1GIp/201eaa29f0.png)
+![Running via Xcode](http://i.imgur.com/d3ccdkK.png)
 
 ## Attribution
 
